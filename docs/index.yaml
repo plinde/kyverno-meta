@@ -3,9 +3,9 @@ entries:
   only-policies:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-12-06T19:57:53.603044-05:00"
+    created: "2023-12-06T21:17:21.752924-05:00"
     description: A Helm chart for Kubernetes
-    digest: 2c952ffa17aefaffb05b7cbbd4d032b7238cc598d6a2efe60faeae63817b544a
+    digest: 98e450c933abacf6c080f64e49838f017a7b15f79ae96855a86c849f23b37a1b
     name: only-policies
     type: application
     urls:
@@ -14,16 +14,16 @@ entries:
   policies-plus-kyverno:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-12-06T19:57:53.6099-05:00"
+    created: "2023-12-06T21:17:21.7589-05:00"
     dependencies:
     - name: kyverno
       repository: https://kyverno.github.io/kyverno/
       version: 2.7.4
     description: A Helm chart for Kubernetes
-    digest: f41cde6aef00c81652a9ba49b2fa60ae028d2dacaa628732755646f2e19b7223
+    digest: d23de3e0d1365ac5eb4021f7d0a4fa9fdda7a8afc5c6ee539fdefdcc99ad1065
     name: policies-plus-kyverno
     type: application
     urls:
     - https://plinde.github.io/kyverno-meta/policies-plus-kyverno-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-06T19:57:53.602868-05:00"
+generated: "2023-12-06T21:17:21.752735-05:00"
