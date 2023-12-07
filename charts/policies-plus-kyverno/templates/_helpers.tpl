@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "my-policies.name" -}}
+{{- define "policies-plus-kyverno.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "my-policies.fullname" -}}
+{{- define "policies-plus-kyverno.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "my-policies.chart" -}}
+{{- define "policies-plus-kyverno.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "my-policies.labels" -}}
-helm.sh/chart: {{ include "my-policies.chart" . }}
-{{ include "my-policies.selectorLabels" . }}
+{{- define "policies-plus-kyverno.labels" -}}
+helm.sh/chart: {{ include "policies-plus-kyverno.chart" . }}
+{{ include "policies-plus-kyverno.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "my-policies.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "my-policies.name" . }}
+{{- define "policies-plus-kyverno.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "policies-plus-kyverno.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "my-policies.serviceAccountName" -}}
+{{- define "policies-plus-kyverno.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "my-policies.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "policies-plus-kyverno.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
